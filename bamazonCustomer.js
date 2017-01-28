@@ -1,5 +1,6 @@
 var inquirer = require('inquirer');
 var mysql = require("mysql");
+var res = res;
 
 var idnumberArray = [];
 
@@ -25,6 +26,7 @@ connection.connect(function(err) {
 
 connection.query("SELECT * FROM products", function(err, res) {
     if (err) throw err;
+    res = res;
     console.log("");
     console.log("There are " + res.length + " Items for Sale")
     console.log("");
@@ -62,17 +64,26 @@ function checkstore() {
         }
 
     ]).then(function(answer) {
-      	var n = idnumberArray;
-        console.log(idnumberArray);
-        var k = (n).indexOf((answer.idnumber));
-        console.log(k);
+    	res;
+    	noidea = res[2].item_id;
+      	
+      	console.log(name);
+    	// for(var i=0; i < res.length; i++){
+    	// 	res;
+    	// if(answer.idnumber == (res[i]).item_id){
 
-// MIKE ^^^^its this part here???? What do I do?
+    	// 	console.log("true");
+
+    	// };
+
+    	// }
 
        
         // if (123 == "123") { console.log("yes!") } else(console.log("no"))
 
     });
+
+
 }
 
 
